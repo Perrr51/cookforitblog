@@ -1,0 +1,26 @@
+<p class="language-switcher">
+    {{ $siteLanguages := .Site.Languages }}
+    {{ $pageLang := .Page.Lang }}
+    
+    {{ range .Page.AllTranslations }}
+        {{ $translation := . }}
+        {{ range $siteLanguages }}
+            {{ if eq $translation.Lang .Lang }}
+                {{ if eq $pageLang .Lang }}
+                    <span class="current-language">{{ .LanguageName }}</span>
+                {{ else }}
+                    <a href="{{ $translation.Permalink }}" class="language-link">
+                        {{ if eq .Lang "es" }}
+                            Cambiar a Español
+                        {{ else if eq .Lang "en" }}
+                            Switch to English
+                        {{ else }}
+                            {{ .LanguageName }}
+                        {{ end }}
+                    </a>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</p>
+

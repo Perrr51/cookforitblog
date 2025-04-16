@@ -1,0 +1,22 @@
+/* Override this file to customise the theme's CSS for your site */
+.language-switcher {
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.current-language {
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.language-link {
+    text-decoration: underline;
+    color: #00bcd4;
+}
+
+.language-link:hover {
+    text-decoration: none;
+}
+
+
+
