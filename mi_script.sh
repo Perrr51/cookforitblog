@@ -6,10 +6,12 @@ BRANCH_MAIN="master"
 BRANCH_HOSTINGER="hostinger"
 PUBLIC_DIR="public"
 COMMIT_MSG="Actualización automática del sitio Hugo $(date +'%Y-%m-%d %H:%M:%S')"
+GITIGNORE_FILE=".gitignore"
 
 # Colores
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
 NC='\033[0m'
 
 # Función para errores
@@ -18,12 +20,29 @@ handle_error() {
     exit 1
 }
 
-# 1. Verifica cambios no commitados y haz commit automáticamente si hay cambios
+# Verificar y configurar .gitignore
+echo -e "${GREEN}Verificando .gitignore...${NC}"
+if ! grep -q ".obsidian/workspace.json" "$GITIGNORE_FILE"; then
+    echo -e "${GREEN}Añadiendo .obsidian/workspace.json a .gitignore...${NC}"
+    echo -e "\n# Ignorar archivos de workspace de Obsidian" >> "$GITIGNORE_FILE"
+    echo ".obsidian/workspace.json" >> "$GITIGNORE_FILE"
+    git add "$GITIGNORE_FILE"
+    git commit -m "Ignorar workspace.json" || echo "Sin cambios en .gitignore"
+fi
+
+# Eliminar workspace.json del tracking
+if git ls-files --error-unmatch .obsidian/workspace.json &> /dev/null; then
+    echo -e "${GREEN}Eliminando workspace.json del tracking...${NC}"
+    git rm --cached .obsidian/workspace.json
+    git commit -m "Eliminar workspace.json del tracking" || handle_error "Commit fallido"
+fi
+
+# 1. Verificar cambios no commitados
 echo -e "${GREEN}Verificando cambios pendientes...${NC}"
 if [[ $(git status --porcelain) ]]; then
-    echo -e "${YELLOW}Hay cambios no commitados. Haciendo commit automáticamente...${NC}"
+    echo -e "${GREEN}Haciendo commit automático...${NC}"
     git add .
-    git commit -m "$COMMIT_MSG" || handle_error "No se pudo hacer commit"
+    git commit -m "$COMMIT_MSG" || handle_error "Commit fallido"
 else
     echo -e "${GREEN}No hay cambios pendientes.${NC}"
 fi
@@ -33,25 +52,24 @@ echo -e "${GREEN}Generando sitio Hugo...${NC}"
 hugo || handle_error "Error al generar el sitio"
 
 # 3. Subir cambios a la rama master
-echo -e "${GREEN}Subiendo cambios a la rama $BRANCH_MAIN...${NC}"
+echo -e "${GREEN}Subiendo cambios a $BRANCH_MAIN...${NC}"
 git checkout $BRANCH_MAIN || handle_error "No se pudo cambiar a $BRANCH_MAIN"
-git pull --rebase origin $BRANCH_MAIN || handle_error "Error al hacer pull en $BRANCH_MAIN"
-git push origin $BRANCH_MAIN || handle_error "Error al hacer push en $BRANCH_MAIN"
+git config pull.rebase false
 
-# 4. Actualizar rama hostinger con contenido de public/
-echo -e "${GREEN}Actualizando rama $BRANCH_HOSTINGER con contenido de $PUBLIC_DIR...${NC}"
-# Crear rama temporal
-TEMP_BRANCH="temp-host-$(date +'%s')"
+# Intentar pull con historias no relacionadas
+if ! git pull origin $BRANCH_MAIN --allow-unrelated-histories; then
+    echo -e "${YELLOW}Resolviendo conflictos de fusiones no relacionadas...${NC}"
+    git reset --hard origin/$BRANCH_MAIN
+    git pull origin $BRANCH_MAIN --allow-unrelated-histories || handle_error "Error al hacer pull"
+fi
+
+git push origin $BRANCH_MAIN || handle_error "Error al hacer push"
+
+# 4. Actualizar rama hostinger
+echo -e "${GREEN}Actualizando rama $BRANCH_HOSTINGER...${NC}"
+TEMP_BRANCH="temp-host-$(date +%s)"
 git subtree split --prefix=$PUBLIC_DIR -b $TEMP_BRANCH || handle_error "Error en subtree split"
+git push origin $TEMP_BRANCH:$BRANCH_HOSTINGER --force || handle_error "Error al hacer push a $BRANCH_HOSTINGER"
+git branch -D $TEMP_BRANCH || handle_error "Error al borrar rama temporal"
 
-# Forzar push a la rama hostinger
-git push origin $TEMP_BRANCH:$BRANCH_HOSTINGER --force || handle_error "Error en push a $BRANCH_HOSTINGER"
-
-# Borrar rama temporal
-git branch -D $TEMP_BRANCH || handle_error "No se pudo borrar la rama temporal"
-
-# 5. Volver a la rama principal
-git checkout $BRANCH_MAIN || handle_error "No se pudo volver a $BRANCH_MAIN"
-
-echo -e "${GREEN}¡Proceso completado con éxito!${NC}"
-
+echo -e "${GREEN}¡Despliegue exitoso!${NC}"
