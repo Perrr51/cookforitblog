@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ciencia on cookforit</title>
-    <link>http://172.16.15.32/en/categories/ciencia/</link>
+    <link>https://cookforit.com/en/categories/ciencia/</link>
     <description>Recent content in Ciencia on cookforit</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>© [Perrr51](https://CookFORIT)</copyright>
-    <lastBuildDate>Mon, 14 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://172.16.15.32/en/categories/ciencia/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© [Perrr51](https://Cookforit)</copyright>
+    <lastBuildDate>Mon, 14 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://cookforit.com/en/categories/ciencia/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mi Nuevo Post</title>
-      <link>http://172.16.15.32/en/project/prueba-de-proyecto/</link>
+      <link>https://cookforit.com/en/project/prueba-de-proyecto/</link>
       <pubDate>Mon, 14 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://172.16.15.32/en/project/prueba-de-proyecto/</guid>
+      <guid>https://cookforit.com/en/project/prueba-de-proyecto/</guid>
       <description>Este es el contenido de mi entrada.</description>
     </item>
     

@@ -1,8 +1,8 @@
-baseURL = "http://172.16.15.32"
+baseURL = "https://cookforit.com/"
 theme = "risotto"
-title = "CookFORIT"
+title = "cookforit"
 author = "Perrr51"
-copyright = "© [Perrr51](https://CookFORIT)"
+copyright = "© [Perrr51](https://Cookforit)"
 paginate = 3
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
@@ -87,7 +87,7 @@ logo = "🍚"
 [[params.socialLinks]]
 icon = "fa-brands fa-github"
 title = "GitHub"
-url = "https://github.com/joeroe/risotto"
+url = "https://github.com/Perrr51"
 
 [[params.socialLinks]]
 icon = "fa-solid fa-envelope"

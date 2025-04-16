@@ -2,114 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://172.16.15.32/es/</loc>
+    <loc>https://cookforit.com/es/</loc>
     <lastmod>2025-04-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://172.16.15.32/en/"
+                href="https://cookforit.com/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://172.16.15.32/es/"
+                href="https://cookforit.com/es/"
                 />
   </url><url>
-    <loc>http://172.16.15.32/es/proyectos/</loc>
+    <loc>https://cookforit.com/es/proyectos/</loc>
     <lastmod>2025-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://172.16.15.32/es/proyectos/prueba-de-proyecto/</loc>
+    <loc>https://cookforit.com/es/proyectos/prueba-de-proyecto/</loc>
     <lastmod>2025-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://172.16.15.32/es/tags/prueba/</loc>
+    <loc>https://cookforit.com/es/tags/prueba/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://172.16.15.32/en/tags/prueba/"
+                href="https://cookforit.com/en/tags/prueba/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://172.16.15.32/es/tags/prueba/"
+                href="https://cookforit.com/es/tags/prueba/"
                 />
   </url><url>
-    <loc>http://172.16.15.32/es/post/my-first-entry-to-this-world/</loc>
+    <loc>https://cookforit.com/es/post/my-first-entry-to-this-world/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://172.16.15.32/en/post/my-first-entry-to-this-world/"
+                href="https://cookforit.com/en/post/my-first-entry-to-this-world/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://172.16.15.32/es/post/my-first-entry-to-this-world/"
+                href="https://cookforit.com/es/post/my-first-entry-to-this-world/"
                 />
   </url><url>
-    <loc>http://172.16.15.32/es/post/prueba/</loc>
+    <loc>https://cookforit.com/es/post/prueba/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://172.16.15.32/en/post/prueba/"
+                href="https://cookforit.com/en/post/prueba/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://172.16.15.32/es/post/prueba/"
+                href="https://cookforit.com/es/post/prueba/"
                 />
   </url><url>
-    <loc>http://172.16.15.32/es/post/</loc>
+    <loc>https://cookforit.com/es/post/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://172.16.15.32/en/post/"
+                href="https://cookforit.com/en/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://172.16.15.32/es/post/"
+                href="https://cookforit.com/es/post/"
                 />
   </url><url>
-    <loc>http://172.16.15.32/es/tags/</loc>
+    <loc>https://cookforit.com/es/tags/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://172.16.15.32/en/tags/"
+                href="https://cookforit.com/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://172.16.15.32/es/tags/"
+                href="https://cookforit.com/es/tags/"
                 />
   </url><url>
-    <loc>http://172.16.15.32/es/categories/</loc>
+    <loc>https://cookforit.com/es/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://172.16.15.32/en/categories/"
+                href="https://cookforit.com/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://172.16.15.32/es/categories/"
+                href="https://cookforit.com/es/categories/"
                 />
   </url><url>
-    <loc>http://172.16.15.32/es/estudios-actuales/</loc>
+    <loc>https://cookforit.com/es/estudios-actuales/</loc>
   </url><url>
-    <loc>http://172.16.15.32/es/series/</loc>
+    <loc>https://cookforit.com/es/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://172.16.15.32/en/series/"
+                href="https://cookforit.com/en/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://172.16.15.32/es/series/"
+                href="https://cookforit.com/es/series/"
                 />
   </url>
 </urlset>
