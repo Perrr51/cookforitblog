@@ -35,7 +35,7 @@ hugo || handle_error "Error al generar el sitio"
 # 3. Subir cambios a la rama master
 echo -e "${GREEN}Subiendo cambios a la rama $BRANCH_MAIN...${NC}"
 git checkout $BRANCH_MAIN || handle_error "No se pudo cambiar a $BRANCH_MAIN"
-git pull --rebase || handle_error "Error al hacer pull en $BRANCH_MAIN"
+git pull --rebase origin $BRANCH_MAIN || handle_error "Error al hacer pull en $BRANCH_MAIN"
 git push origin $BRANCH_MAIN || handle_error "Error al hacer push en $BRANCH_MAIN"
 
 # 4. Actualizar rama hostinger con contenido de public/
