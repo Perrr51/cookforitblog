@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 13 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://cookforit.com/es/tags/prueba/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prueba</title>
-      <link>https://cookforit.com/es/post/my-first-entry-to-this-world/</link>
+      <link>https://cookforit.com/es/post/mi-primera-entrada/</link>
       <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://cookforit.com/es/post/my-first-entry-to-this-world/</guid>
+      <guid>https://cookforit.com/es/post/mi-primera-entrada/</guid>
       <description>blog para guardar o archivar mis progresos en el blog pondre los libros que voy leyendo y tambien los proyectos que haga El nombre sera
 CookFOR(IT)
 El blog constara de tres partes:
@@ -22,15 +22,11 @@ Proyectos/estudios Blog about me ***Proyectos/estudios en esta sección se descr
     
     <item>
       <title>Prueba</title>
-      <link>https://cookforit.com/es/post/prueba/</link>
+      <link>https://cookforit.com/es/post/mi-segunda-entrada/</link>
       <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://cookforit.com/es/post/prueba/</guid>
-      <description>blog para guardar o archivar mis progresos en el blog pondre los libros que voy leyendo y tambien los proyectos que haga El nombre sera
-CookFOR(IT)
-El blog constara de tres partes:
-Proyectos/estudios Blog about me ***Proyectos/estudios en esta sección se describirán los proyectos que actualmente este haciendo:
-***Blog En esta seccion pondre un poco de mi mismo como me siento con cosas que lea o libros sobre x temas o como estoy llevando cierto proyecto&amp;hellip;</description>
+      <guid>https://cookforit.com/es/post/mi-segunda-entrada/</guid>
+      <description></description>
     </item>
     
   </channel>
