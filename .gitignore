@@ -1,0 +1,3 @@
+
+# Ignorar archivos de workspace de Obsidian
+.obsidian/workspace.json
