@@ -66,6 +66,9 @@
                 href="https://cookforit.com/es/tags/"
                 />
   </url><url>
+    <loc>https://cookforit.com/es/post/tercera-entrada/</loc>
+    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://cookforit.com/es/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -91,7 +94,5 @@
                 hreflang="es"
                 href="https://cookforit.com/es/series/"
                 />
-  </url><url>
-    <loc>https://cookforit.com/es/post/tercera-entrada/</loc>
   </url>
 </urlset>
