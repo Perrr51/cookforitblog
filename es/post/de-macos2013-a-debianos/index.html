@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head><title>Reutilizar en vez de desechar cómo convertí un viejo MacBook en servidor Debian &ndash; cookforit</title>
+<meta name="description" content="Simple blog">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cookforit.com/css/palettes/tokyo-night-dark.css">
+<link rel="stylesheet" href="https://cookforit.com/css/risotto.css">
+<link rel="stylesheet" href="https://cookforit.com/css/custom.css">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+      <li class="nomarker"><h1 class="page__logo"><a href="https://cookforit.com/" class="page__logo-inner">cookforit</a></h1></li>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://cookforit.com/es/post/" title="">post</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://cookforit.com/es/proyectos/" title="">proyectos</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://cookforit.com/es/estudios-actuales/" title="">Estudios actuales</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Reutilizar en vez de desechar cómo convertí un viejo MacBook en servidor Debian</h1>
+    </header>
+    <div class="content__body">
+        <p>Recientemente me he comprado un ordenador nuevo, un Lenovo P15 G2, pero de eso hablaremos en otro post. Hoy quiero centrarme en algo que considero fundamental: <strong>reutilizar equipos antes de tirarlos o dejarlos olvidados en un cajón</strong>.</p>
+<p>Durante años, mi MacBook —con un procesador Core i5, 8 GB de RAM y 175 GB en SSD— fue mi compañero de batalla. Sin embargo, la última actualización de macOS que pude instalarle fue Big Sur, y ya sabemos que el software privativo deja de dar soporte a versiones antiguas rápidamente. En lugar de desecharlo, decidí darle una segunda vida como servidor Debian.</p>
+<p><strong>¿Por qué Debian y por qué LXDE?</strong><br>
+Elegí Debian por su estabilidad y, en concreto, la versión de escritorio ligero LXDE para aprovechar al máximo los recursos del equipo. El proceso requiere un USB y descargar la ISO de Debian que quieras instalar. Al principio, instalé Debian 12, pero me encontré con un problema: el driver de la tarjeta de red BCM4360 (Broadcom) no era compatible con el kernel 6.10 que trae Debian 12. El driver propietario broadcom-sta solo es compatible hasta el kernel 5.10.</p>
+<p><strong>¿La solución?</strong><br>
+Instalar Debian 11, que incluye el kernel adecuado, y luego añadir manualmente las dependencias necesarias. Aquí tienes la lista completa de paquetes que debes descargar y guardar en una carpeta (mejor fuera del escritorio):</p>
+<h2 id="lista-de-paquetes-a-descargar"><strong>Lista de paquetes a descargar</strong></h2>
+<ul>
+<li>
+<p><strong>Dependencias de Perl y sistema:</strong></p>
+<ul>
+<li>
+<p>perl-base</p>
+</li>
+<li>
+<p>perl-modules-5.32</p>
+</li>
+<li>
+<p>libperl5.32</p>
+</li>
+<li>
+<p>libfile-fcntllock-perl</p>
+</li>
+<li>
+<p>liblocale-gettext-perl</p>
+</li>
+<li>
+<p>dpkg</p>
+</li>
+<li>
+<p>libdpkg-perl</p>
+</li>
+<li>
+<p>distro-info-data</p>
+</li>
+<li>
+<p>lsb-release</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Herramientas de compilación:</strong></p>
+<ul>
+<li>
+<p>gcc</p>
+</li>
+<li>
+<p>make</p>
+</li>
+<li>
+<p>dpkg-dev</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Encabezados del kernel y herramientas:</strong></p>
+<ul>
+<li>
+<p>linux-headers-&lt;versión&gt;-common</p>
+</li>
+<li>
+<p>linux-headers-&lt;versión&gt;-amd64</p>
+</li>
+<li>
+<p>linux-kbuild-5.10 (o el que corresponda a tu kernel)</p>
+</li>
+<li>
+<p>libc6</p>
+</li>
+<li>
+<p>libelf1</p>
+</li>
+<li>
+<p>libssl1.1</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Herramientas inalámbricas:</strong></p>
+<ul>
+<li>
+<p>wireless-tools</p>
+</li>
+<li>
+<p>libiw30</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Driver Broadcom STA:</strong></p>
+<ul>
+<li>broadcom-sta-dkms</li>
+</ul>
+</li>
+</ul>
+<p>Guarda todos los paquetes en una carpeta y, desde la terminal, accede a ella con <code>cd</code> para instalarlos en este orden:</p>
+<h2 id="instalación-paso-a-paso">Instalación paso a paso</h2>
+<h1 id="dependencias-básicas-de-perl-y-sistema">Dependencias básicas de Perl y sistema</h1>
+<p>sudo dpkg -i perl-base_<em>.deb
+sudo dpkg -i perl-modules-5.32_</em>.deb
+sudo dpkg -i libperl5.32_<em>.deb
+sudo dpkg -i libfile-fcntllock-perl_</em>.deb
+sudo dpkg -i liblocale-gettext-perl_<em>.deb
+sudo dpkg -i dpkg_</em>.deb
+sudo dpkg -i libdpkg-perl_<em>.deb
+sudo dpkg -i distro-info-data_</em>.deb
+sudo dpkg -i lsb-release_*.deb</p>
+<h1 id="herramientas-de-compilación">Herramientas de compilación</h1>
+<p>sudo dpkg -i gcc_<em>.deb
+sudo dpkg -i make_</em>.deb
+sudo dpkg -i dpkg-dev_*.deb</p>
+<h1 id="encabezados-del-kernel-y-herramientas">Encabezados del kernel y herramientas</h1>
+<p>sudo dpkg -i libc6_<em>.deb
+sudo dpkg -i libelf1_</em>.deb
+sudo dpkg -i libssl1.1_<em>.deb
+sudo dpkg -i linux-kbuild-5.10_</em>.deb
+sudo dpkg -i linux-headers-<code>&lt;versión&gt;</code>-common_<em>.deb
+sudo dpkg -i linux-headers-<code>&lt;versión&gt;</code>-amd64_</em>.deb</p>
+<h1 id="herramientas-inalámbricas">Herramientas inalámbricas</h1>
+<p>sudo dpkg -i libiw30_<em>.deb
+sudo dpkg -i wireless-tools_</em>.deb</p>
+<h1 id="driver-broadcom-sta">Driver Broadcom STA</h1>
+<p>sudo dpkg -i broadcom-sta-dkms_*.deb</p>
+<h1 id="si-hay-errores-de-dependencias">Si hay errores de dependencias</h1>
+<p>sudo apt-get install -f</p>
+<h1 id="cargar-el-módulo-broadcom-sta">Cargar el módulo Broadcom STA</h1>
+<p>sudo modprobe wl</p>
+<h1 id="si-el-módulo-no-se-carga-automáticamente-al-reiniciar">Si el módulo no se carga automáticamente al reiniciar</h1>
+<p>echo &ldquo;wl&rdquo; | sudo tee /etc/modules-load.d/wl.conf</p>
+<h1 id="para-evitar-conflictos-con-otros-módulos">Para evitar conflictos con otros módulos</h1>
+<p>echo -e &ldquo;blacklist b43\nblacklist b43legacy\nblacklist ssb\nblacklist brcmsmac\nblacklist bcma&rdquo; | sudo tee /etc/modprobe.d/blacklist-broadcom.conf</p>
+<p>Este proceso fue fruto de casi ocho horas de pruebas e investigación. Espero que esta guía te ayude a aprovechar ese ordenador que pensabas tirar. ¡Nos vemos en el próximo post!</p>
+
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    <span class="about__logo" role="img">🍚</span>&nbsp;
+    
+<h1 class="about__title">CookFOR(IT)</h1>
+<p class="about__description">Simple blog</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/Perrr51" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:example@example.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="https://orcid.org/0000-0001-2345-6789" rel="me" aria-label="ORCID" title="ORCID"><i class="ai ai-orcid" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            
+            2025-04-21
+        </p>
+    
+
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p class="language-switcher">
+    
+    
+    
+    
+        
+        
+            
+                
+                    <span class="current-language">Español</span>
+                
+            
+        
+            
+        
+    
+</p>
+
+<p class="copyright">© <a href="https://Cookforit">Perrr51</a></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a></p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
