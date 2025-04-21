@@ -2,9 +2,11 @@
 title: index
 ---
 
-![Mi foto](/images/prueba1.jpeg)
+
 
 ## Bienvenido a Mi Second Brain: Un Diario de Cambio y Progreso
+
+![Mi foto](/images/prueba1.jpeg)
 
 ¿Alguna vez has sentido que tu vida necesita un giro? Yo también. Soy Miguel Ángel, y este blog es mi espacio personal para documentar mi viaje de transformación profesional y personal.
 
