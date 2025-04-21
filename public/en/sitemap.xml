@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cookforit.com/en/post/</loc>
+    <lastmod>2025-04-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://cookforit.com/es/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cookforit.com/en/post/"
+                />
+  </url><url>
+    <loc>https://cookforit.com/en/post/a-new-direction/</loc>
+    <lastmod>2025-04-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cookforit.com/en/</loc>
+    <lastmod>2025-04-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://cookforit.com/es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cookforit.com/en/"
+                />
+  </url><url>
     <loc>https://cookforit.com/en/categories/</loc>
     <lastmod>2025-04-14T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -17,19 +47,6 @@
   </url><url>
     <loc>https://cookforit.com/en/categories/ciencia/</loc>
     <lastmod>2025-04-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cookforit.com/en/</loc>
-    <lastmod>2025-04-14T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://cookforit.com/es/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cookforit.com/en/"
-                />
   </url><url>
     <loc>https://cookforit.com/en/tags/innovaci%C3%B3n/</loc>
     <lastmod>2025-04-14T00:00:00+00:00</lastmod>
@@ -58,39 +75,6 @@
   </url><url>
     <loc>https://cookforit.com/en/tags/tutoriales/</loc>
     <lastmod>2025-04-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cookforit.com/en/post/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://cookforit.com/es/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cookforit.com/en/post/"
-                />
-  </url><url>
-    <loc>https://cookforit.com/en/tags/prueba/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://cookforit.com/es/tags/prueba/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cookforit.com/en/tags/prueba/"
-                />
-  </url><url>
-    <loc>https://cookforit.com/en/post/my-first-entry-to-this-world/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cookforit.com/en/post/prueba/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cookforit.com/en/current_studies/</loc>
   </url><url>

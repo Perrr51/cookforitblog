@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cookforit.com/es/</loc>
-    <lastmod>2025-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-21T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,36 +15,11 @@
                 href="https://cookforit.com/es/"
                 />
   </url><url>
-    <loc>https://cookforit.com/es/proyectos/</loc>
-    <lastmod>2025-04-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cookforit.com/es/proyectos/prueba-de-proyecto/</loc>
-    <lastmod>2025-04-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cookforit.com/es/post/mi-primera-entrada/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cookforit.com/es/post/mi-segunda-entrada/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cookforit.com/es/tags/prueba/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cookforit.com/en/tags/prueba/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://cookforit.com/es/tags/prueba/"
-                />
-  </url><url>
-    <loc>https://cookforit.com/es/post/prueba-4/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
+    <loc>https://cookforit.com/es/post/nuevo-rumbo/</loc>
+    <lastmod>2025-04-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cookforit.com/es/post/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-21T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -56,21 +31,11 @@
                 href="https://cookforit.com/es/post/"
                 />
   </url><url>
-    <loc>https://cookforit.com/es/tags/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cookforit.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://cookforit.com/es/tags/"
-                />
+    <loc>https://cookforit.com/es/proyectos/</loc>
+    <lastmod>2025-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cookforit.com/es/post/tercera-entrada/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
+    <loc>https://cookforit.com/es/proyectos/prueba-de-proyecto/</loc>
+    <lastmod>2025-04-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cookforit.com/es/categories/</loc>
     <xhtml:link
@@ -96,6 +61,18 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://cookforit.com/es/series/"
+                />
+  </url><url>
+    <loc>https://cookforit.com/es/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cookforit.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://cookforit.com/es/tags/"
                 />
   </url>
 </urlset>
