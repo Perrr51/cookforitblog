@@ -1,5 +1,5 @@
 ---
-title: Reutilizar en vez de desechar: cómo convertí un viejo MacBook en servidor Debian
+title: Reutilizar en vez de desechar cómo convertí un viejo MacBook en servidor Debian
 date: 2025-04-21
 ---
 
