@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cookforit</title>
+    <title>Posts on cookforit</title>
     <link>https://cookforit.com/en/post/</link>
-    <description>Recent content on cookforit</description>
+    <description>Recent content in Posts on cookforit</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© [Perrr51](https://Cookforit)</copyright>
     <lastBuildDate>Mon, 21 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://cookforit.com/en/post/index.xml" rel="self" type="application/rss+xml" />
