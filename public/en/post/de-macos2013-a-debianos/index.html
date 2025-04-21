@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><title>Reuse Instead of Discarding How I Turned an Old MacBook into a Debian Server &ndash; cookforit</title>
+<meta name="description" content="Simple blog">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cookforit.com/css/palettes/tokyo-night-dark.css">
+<link rel="stylesheet" href="https://cookforit.com/css/risotto.css">
+<link rel="stylesheet" href="https://cookforit.com/css/custom.css">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+      <li class="nomarker"><h1 class="page__logo"><a href="https://cookforit.com/" class="page__logo-inner">cookforit</a></h1></li>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://cookforit.com/en/post/" title="">Posts</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://cookforit.com/en/project/" title="">Projects</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://cookforit.com/en/current_studies/" title="">Current Studies</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Reuse Instead of Discarding How I Turned an Old MacBook into a Debian Server</h1>
+    </header>
+    <div class="content__body">
+        <p>I recently bought a new computer, a Lenovo P15 G2, but I’ll talk about that in another post. Today, I want to focus on something essential: <strong>reusing devices instead of throwing them away or leaving them forgotten in a drawer</strong>.</p>
+<p>For years, my MacBook—with a Core i5 processor, 8GB of RAM, and 175GB SSD—was my daily driver. However, the last macOS update I could install was Big Sur, and as we know, proprietary software quickly drops support for older versions. Instead of discarding it, I decided to give it a second life as a Debian server.</p>
+<p><strong>Why Debian and why LXDE?</strong><br>
+I chose Debian for its stability, and specifically the lightweight LXDE desktop version to make the most of the device’s resources. The process requires a USB drive and downloading the Debian ISO you want to install. At first, I installed Debian 12, but encountered a problem: the BCM4360 network card driver (Broadcom) is not compatible with the 6.10 kernel that Debian 12 uses. The proprietary broadcom-sta driver only supports up to kernel 5.10.</p>
+<p><strong>The solution?</strong><br>
+Install Debian 11, which comes with the right kernel, and then manually add the necessary dependencies. Here’s the complete list of packages you need to download and save in a folder (preferably not on the desktop):</p>
+<h2 id="list-of-packages-to-download">List of packages to download</h2>
+<ul>
+<li>
+<p><strong>Perl and system dependencies:</strong><br>
+perl-base, perl-modules-5.32, libperl5.32, libfile-fcntllock-perl, liblocale-gettext-perl, dpkg, libdpkg-perl, distro-info-data, lsb-release</p>
+</li>
+<li>
+<p><strong>Build tools:</strong><br>
+gcc, make, dpkg-dev</p>
+</li>
+<li>
+<p><strong>Kernel headers and tools:</strong><br>
+linux-headers-<version>-common, linux-headers-<version>-amd64, linux-kbuild-5.10, libc6, libelf1, libssl1.1</p>
+</li>
+<li>
+<p><strong>Wireless tools:</strong><br>
+wireless-tools, libiw30</p>
+</li>
+<li>
+<p><strong>Broadcom STA driver:</strong><br>
+broadcom-sta-dkms</p>
+</li>
+</ul>
+<p>Save all packages in a folder and, from the terminal, use <code>cd</code> to access it and install them in this order:</p>
+<h1 id="basic-perl-and-system-dependencies">Basic Perl and system dependencies</h1>
+<p>sudo dpkg -i perl-base_<em>.deb
+sudo dpkg -i perl-modules-5.32_</em>.deb
+sudo dpkg -i libperl5.32_<em>.deb
+sudo dpkg -i libfile-fcntllock-perl_</em>.deb
+sudo dpkg -i liblocale-gettext-perl_<em>.deb
+sudo dpkg -i dpkg_</em>.deb
+sudo dpkg -i libdpkg-perl_<em>.deb
+sudo dpkg -i distro-info-data_</em>.deb
+sudo dpkg -i lsb-release_*.deb</p>
+<h1 id="build-tools">Build tools</h1>
+<p>sudo dpkg -i gcc_<em>.deb
+sudo dpkg -i make_</em>.deb
+sudo dpkg -i dpkg-dev_*.deb</p>
+<h1 id="kernel-headers-and-tools">Kernel headers and tools</h1>
+<p>sudo dpkg -i libc6_<em>.deb
+sudo dpkg -i libelf1_</em>.deb
+sudo dpkg -i libssl1.1_<em>.deb
+sudo dpkg -i linux-kbuild-5.10_</em>.deb
+sudo dpkg -i linux-headers-<code>&lt;version&gt;</code>-common_<em>.deb
+sudo dpkg -i linux-headers-<code>&lt;version&gt;</code>-amd64_</em>.deb</p>
+<h1 id="wireless-tools">Wireless tools</h1>
+<p>sudo dpkg -i libiw30_<em>.deb
+sudo dpkg -i wireless-tools_</em>.deb</p>
+<h1 id="broadcom-sta-driver">Broadcom STA driver</h1>
+<p>sudo dpkg -i broadcom-sta-dkms_*.deb</p>
+<h1 id="if-there-are-dependency-errors">If there are dependency errors</h1>
+<p>sudo apt-get install -f</p>
+<h1 id="load-the-broadcom-sta-module">Load the Broadcom STA module</h1>
+<p>sudo modprobe wl</p>
+<h1 id="if-the-module-does-not-load-automatically-after-reboot">If the module does not load automatically after reboot</h1>
+<p>echo &ldquo;wl&rdquo; | sudo tee /etc/modules-load.d/wl.conf</p>
+<h1 id="to-avoid-conflicts-with-other-modules">To avoid conflicts with other modules</h1>
+<p>echo -e &ldquo;blacklist b43\nblacklist b43legacy\nblacklist ssb\nblacklist brcmsmac\nblacklist bcma&rdquo; | sudo tee /etc/modprobe.d/blacklist-broadcom.conf</p>
+<p>This process took me almost eight hours of research and trial-and-error. I hope this guide helps you give new life to a computer you thought was obsolete. See you in the next post!</p>
+
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    <span class="about__logo" role="img">🍚</span>&nbsp;
+    
+<h1 class="about__title">CookFOR(IT)</h1>
+<p class="about__description">Simple blog</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/Perrr51" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:example@example.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="https://orcid.org/0000-0001-2345-6789" rel="me" aria-label="ORCID" title="ORCID"><i class="ai ai-orcid" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            
+            2025-04-21
+        </p>
+    
+
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p class="language-switcher">
+    
+    
+    
+    
+        
+        
+            
+                
+                    <a href="https://cookforit.com/es/post/de-macos2013-a-debianos/" class="language-link">
+                        
+                            Cambiar a Español
+                        
+                    </a>
+                
+            
+        
+            
+        
+    
+        
+        
+            
+        
+            
+                
+                    <span class="current-language">English</span>
+                
+            
+        
+    
+</p>
+
+<p class="copyright">© <a href="https://Cookforit">Perrr51</a></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a></p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
