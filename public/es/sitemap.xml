@@ -21,6 +21,12 @@
     <loc>https://cookforit.com/es/proyectos/prueba-de-proyecto/</loc>
     <lastmod>2025-04-14T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://cookforit.com/es/post/mi-primera-entrada/</loc>
+    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cookforit.com/es/post/mi-segunda-entrada/</loc>
+    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://cookforit.com/es/tags/prueba/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -33,12 +39,6 @@
                 hreflang="es"
                 href="https://cookforit.com/es/tags/prueba/"
                 />
-  </url><url>
-    <loc>https://cookforit.com/es/post/mi-primera-entrada/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cookforit.com/es/post/mi-segunda-entrada/</loc>
-    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cookforit.com/es/post/prueba-4/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
