@@ -16,5 +16,15 @@
       <description>Hello, and welcome to the first entry of my blog, second brain, or progress journal that I am building. My current situation is as follows: I am in Switzerland, working in a sector I don’t enjoy, and I feel that my life has taken a direction that doesn’t excite me. That’s why, and to force myself to change, I’ve decided to start this project. My goal is that, entry by entry and project by project, my career in the technology sector will start to take shape.</description>
     </item>
     
+    <item>
+      <title>Reuse Instead of Discarding How I Turned an Old MacBook into a Debian Server</title>
+      <link>https://cookforit.com/en/post/de-macos2013-a-debianos/</link>
+      <pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://cookforit.com/en/post/de-macos2013-a-debianos/</guid>
+      <description>I recently bought a new computer, a Lenovo P15 G2, but I’ll talk about that in another post. Today, I want to focus on something essential: reusing devices instead of throwing them away or leaving them forgotten in a drawer.
+For years, my MacBook—with a Core i5 processor, 8GB of RAM, and 175GB SSD—was my daily driver. However, the last macOS update I could install was Big Sur, and as we know, proprietary software quickly drops support for older versions.</description>
+    </item>
+    
   </channel>
 </rss>
